@@ -1,10 +1,15 @@
 Basic Hello World for esp-idf blink on Esp32-C6 (I have Esp32-C6-DevkitC-1) and PlatformIO
 
+This repo is for ESP-iDF with PlatformIO. If you would ratyher use Arduino (go here to find my basic blink example in Arduino)[https://github.com/Graunephar/Esp32-C6-on-board-RGB-LED-example-in-Arduino-and-PlatformIO].
+
+# About the code
 This repo contains all the neccesarry code to get the Esp32-C6 run the (blink example provided by expressif in esp-idf)[https://github.com/espressif/esp-idf/blob/master/examples/get-started/blink/main/blink_example_main.c]. The main.c file is just that code without any changes. 
 
 The contribution of the repo is an esasy to use configuaration with the build envorionment already provided and all the other build flags already set. See platformio.ini for the neccessary build flags. 
 
 In some ways espressifs build really is overly complicated. If you wanted a basic blink sketch that was as simple as possible this is not it. Since it supports multiple scenarious and hardware, and changes behavior based on the build flags set in platformio.ini. For most real world scenarious it's prerry meaningless. However its a good example of the whole build system including the environment set in platformio.ini and sdkconfig.
+
+The current build flags is configured to use the on-board LED. However since the blink example from Esp-idf also supports external LED it can easily be reconfigured to use an externaol LED by changing the flags set in platformio.ini
 
 # Rewuirements
 Before getting started with the project make sure you have platform io core and esptool.py installed. 
