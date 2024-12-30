@@ -1,4 +1,4 @@
-/* Blink Example
+/* Blink Example from https://github.com/espressif/esp-idf/blob/master/examples/get-started/blink/main/blink_example_main.c
 
    This example code is in the Public Domain (or CC0 licensed, at your option.)
 
@@ -20,8 +20,6 @@ static const char *TAG = "example";
    or you can edit the following line and set a number here.
 */
 #define BLINK_GPIO CONFIG_BLINK_GPIO
-
-#define CONFIG_BLINK_PERIOD 1000
 
 static uint8_t s_led_state = 0;
 
