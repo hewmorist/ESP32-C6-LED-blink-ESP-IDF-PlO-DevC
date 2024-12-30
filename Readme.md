@@ -11,7 +11,7 @@ In some ways espressifs build really is overly complicated. If you wanted a basi
 
 The current build flags is configured to use the on-board LED. However since the blink example from Esp-idf also supports external LED it can easily be reconfigured to use an externaol LED by changing the flags set in platformio.ini
 
-# Rewuirements
+# Requirements
 Before getting started with the project make sure you have platform io core and esptool.py installed. 
 
 ## PlatformIO Core
