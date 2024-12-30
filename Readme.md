@@ -1,35 +1,35 @@
-Basic Hello World for esp-idf blink on Esp32-C6 (I have Esp32-C6-DevkitC-1) and PlatformIO
+# Basic Hello World for ESP-IDF blink on ESP32-C6 (I have ESP32-C6-DevkitC-1) and PlatformIO
 
-This repo is for ESP-iDF with PlatformIO. If you would ratyher use Arduino (go here to find my basic blink example in Arduino)[https://github.com/Graunephar/Esp32-C6-on-board-RGB-LED-example-in-Arduino-and-PlatformIO].
+This repo is for ESP-IDF with PlatformIO. If you would rather use Arduino [go here to find my basic blink example in Arduino](https://github.com/Graunephar/Esp32-C6-on-board-RGB-LED-example-in-Arduino-and-PlatformIO).
 
 # About the code
-This repo contains all the neccesarry code to get the Esp32-C6 run the (blink example provided by expressif in esp-idf)[https://github.com/espressif/esp-idf/blob/master/examples/get-started/blink/main/blink_example_main.c]. The main.c file is just that code without any changes. 
+This repo contains all the necessary code to get the ESP32-C6 to run the [blink example provided by Espressif in ESP-IDF](https://github.com/espressif/esp-idf/blob/master/examples/get-started/blink/main/blink_example_main.c). The `main.c` file is just that code without any changes.
 
-The contribution of the repo is an esasy to use configuaration with the build envorionment already provided and all the other build flags already set. See platformio.ini for the neccessary build flags. 
+The contribution of the repo is an easy-to-use configuration with the build environment already provided and all the other build flags already set. See `platformio.ini` for the necessary build flags.
 
-In some ways espressifs build really is overly complicated. If you wanted a basic blink sketch that was as simple as possible this is not it. Since it supports multiple scenarious and hardware, and changes behavior based on the build flags set in platformio.ini. For most real world scenarious it's prerry meaningless. However its a good example of the whole build system including the environment set in platformio.ini and sdkconfig.
+In some ways, Espressif's build really is overly complicated. If you wanted a basic blink sketch that was as simple as possible, this is not it. Since it supports multiple scenarios and hardware, and changes behavior based on the build flags set in `platformio.ini`. For most real-world scenarios, it's pretty meaningless. However, it's a good example of the whole build system, including the environment set in `platformio.ini` and `sdkconfig`.
 
-The current build flags is configured to use the on-board LED. However since the blink example from Esp-idf also supports external LED it can easily be reconfigured to use an externaol LED by changing the flags set in platformio.ini
+The current build flags are configured to use the on-board LED. However, since the blink example from ESP-IDF also supports an external LED, it can easily be reconfigured to use an external LED by changing the flags set in `platformio.ini`.
 
 # Requirements
-Before getting started with the project make sure you have platform io core and esptool.py installed. 
+Before getting started with the project, make sure you have PlatformIO Core and `esptool.py` installed.
 
 ## PlatformIO Core
-If you are on a mac like me just install it with homebrew by running `brew install pio`
+If you are on a Mac like me, just install it with Homebrew by running `brew install pio`.
 
-Otherwise PlatformIO has a guide on their website on (how to install PlatformIO core)[https://docs.platformio.org/en/latest/core/installation/index.html] whoch is a CLI tool. 
+Otherwise, PlatformIO has a guide on their website on [how to install PlatformIO Core](https://docs.platformio.org/en/latest/core/installation/index.html), which is a CLI tool.
 
 ## esptool.py
-A command line tool for managing ESP. Can be installed with pip. 
+A command-line tool for managing ESP. Can be installed with pip. 
 ````
 ▶ pip install esptool # install ESP tool if you do nbot have already
 ````
 
-Espressif also has (a handy guide)[https://docs.espressif.com/projects/esptool/en/latest/esp32/installation.html] showing how to install it on different systems.
+Espressif also has [a handy guide](https://docs.espressif.com/projects/esptool/en/latest/esp32/installation.html) showing how to install it on different systems.
 
 # Setup
 
-Before runnging make sure to make sure your boards flash size is set in sdkconfig.defaults. If you are unsure which specific flash size your board has run the below command to check. 
+Before running, make sure your board's flash size is set in `sdkconfig.defaults`. If you are unsure which specific flash size your board has, run the below command to check.
 
 ````
 ▶ esptool.py --port /dev/cu.usbmodem21401 flash_id
@@ -57,7 +57,8 @@ Detected flash size: 8MB
 Hard resetting via RTS pin...
 ````
 
-As you can see mine has 8MB of flash. Therefore the content of sdkconfig.defaults needs to be `CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y`
+As you can see, mine has 8MB of flash. Therefore, the content of `sdkconfig.defaults` needs to be:
+`CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y`
 
 If you have another flash size on your board make sure the line in sdkconfig.defaults matches that flash size. Below is some examples. 
 
@@ -71,5 +72,5 @@ CONFIG_ESPTOOLPY_FLASHSIZE_32MB=y
 CONFIG_ESPTOOLPY_FLASHSIZE_64MB=y
 ````
 
-Choose only one of the lines above that matches your flash size and put in sdkconfig.defaults. Be aeare that a board specific file will be generated by PlatformIO at built. It will be called `sdkconfig.*` followed by the soecific board you have. If you already has tried to built before making this change this file might already be present. And it might have the wrong flash size. In that case. Sinxe the file is auto generated, you can just delete it. 
+Choose only one of the lines above that matches your flash size and put it in `sdkconfig.defaults`. Be aware that a board-specific file will be generated by PlatformIO at build. It will be called `sdkconfig.*` followed by the specific board you have. If you have already tried to build before making this change, this file might already be present, and it might have the wrong flash size. In that case, since the file is auto-generated, you can just delete it.
 
