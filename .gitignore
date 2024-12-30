@@ -3,7 +3,7 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
-./sdkconfig.esp32-c6-devkitc-02
+./sdkconfig.esp32-c6-devkitm-1
 
 # Prerequisites
 *.d
