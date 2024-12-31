@@ -15,11 +15,14 @@ bash setusbport.sh
 This should create the link to the /dev/ttyUSB0 device
 
 Plug in the ESP32C6 DevkitM board into the USB port
-and run the following from a Command Prompt window in WINDOWS running as Administrator:
+and run the following commands from a Command Prompt window in WINDOWS running as Administrator:
 
 usbipd list    (to see the <busid>)
+
 usbipd bind <busid>
+
 usbipd list    (should show <busid> as SHARED)
+
 usbipd attach --wsl --busid <busid> (you should hear the connect sound)
 
 Return to VsCode and from a PIO New Terminal type: "pio device list" 
