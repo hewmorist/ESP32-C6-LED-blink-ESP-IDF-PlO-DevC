@@ -2,7 +2,7 @@
 
 This repo is for ESP-IDF with PlatformIO, and is a fork of the repo from @Graunephar (www.github.com/Graunephar). I modified it to build in a devcontainer for the ESP32C6-devkitM-1 board. 
 Usage: Requires Windows 11 with WSL2, Docker Desktop and VsCode Installed.
-Clone the repo from VsCode using "Dec Containers: Clone Repository in Container Volume..." 
+Clone the repo from VsCode using "Dev Containers: Clone Repository in Container Volume..." 
 Once the Container has booted up, follow the recommendation to install the PlatformIO (PIO) extension into the Ubuntu container.
 Run the PIO extension and this should install PIO core into the Ubuntu container.
 Build the code in PIO (Use tool at the bottom of screen or run "PIO run" from a terminal).
